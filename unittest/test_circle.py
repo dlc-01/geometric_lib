@@ -7,7 +7,7 @@ class CircleTestCase(unittest.TestCase):
         """
         Test the area function for different radius values.
         """
-        # Test for radius r = 2
+       # Test for radius r = 2
         self.assertAlmostEqual(area(2), math.pi * 2 * 2)
         # Test for radius r = 6.9
         self.assertAlmostEqual(area(6.9), math.pi * 6.9 * 6.9)

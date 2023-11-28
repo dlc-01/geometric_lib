@@ -1,0 +1,30 @@
+name: Run unittests
+
+on:
+  push:
+    branches:
+      - cicd_410735
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Start unittest
+        run: |
+          python -m unittest unittests/test_rectangle.py
+          python -m unittest unittests/test_circle.py
+          python -m unittest unittests/test_square.py
+          python -m unittest unittests/test_triangle.py
