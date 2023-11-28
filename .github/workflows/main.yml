@@ -24,7 +24,7 @@ jobs:
 
       - name: Start unittest
         run: |
-          python -m unittest unittests/test_rectangle.py
-          python -m unittest unittests/test_circle.py
-          python -m unittest unittests/test_square.py
-          python -m unittest unittests/test_triangle.py
+          python -m unittest test_rectangle.py
+          python -m unittest test_circle.py
+          python -m unittest test_square.py
+          python -m unittest test_triangle.py
