@@ -176,7 +176,7 @@ This code will print the following output:
 ```
 
 # Autotest 
-* 24/24 test passed
+* 24/32 test passed
 
 
 ## Changelog
