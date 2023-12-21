@@ -4,24 +4,32 @@ on:
   push:
     branches:
       - cicd_410735
-
+        
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-
+  tests-for-ubuntu:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Clone repo for checkout
         uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Install python for check
+        uses: actions/setup-python@v3
         with:
-          python-version: 3.x
-
+          python-version: 3.12
+      - name: Start unittest
+        run: |
+          python -m unittest test_rectangle.py
+          python -m unittest test_circle.py
+          python -m unittest test_square.py
+          python -m unittest test_triangle.py  
+  tests-for-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Clone repo for checkout
+        uses: actions/checkout@v2
+      - name: Install python for check
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.12
       - name: Start unittest
         run: |
           python -m unittest test_rectangle.py
