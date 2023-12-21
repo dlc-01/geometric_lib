@@ -11,22 +11,29 @@ class TestSquareFunctions(unittest.TestCase):
         Test the area function by integer.
         """
         # Test for side a = 4
-        self.assertAlmostEqual(area(4), 16)
-
+        self.assertEqual(area(4), 16)
+        
+    def test_square_area_negative(self):
+        """
+        Test the area function by negeative integer.
+        """
+        with self.assertRaises(Exception):
+            # Test for side a = -6
+           area(-6)
 
     def test_square_area_float(self):
         """
         Test the area function by float
         """
         # Test for side a = 6.9
-        self.assertAlmostEqual(area(6.9), 6.9*6.9)
+        self.assertEqual(area(6.9), 6.9*6.9)
     
     def test_square_area_big(self):
         """
         Test the area function by float and int
         """
         # Test for side a = 52
-        self.assertAlmostEqual(area(520), 520*520)
+        self.assertEqual(area(520), 520*520)
         
     
     def test_square_perimeter_integer(self):
@@ -34,7 +41,7 @@ class TestSquareFunctions(unittest.TestCase):
         Test the perimeter function by integer.
         """
         # Test for side a = 5
-        self.assertAlmostEqual(perimeter(5), 20)
+        self.assertEqual(perimeter(5), 20)
 
 
     def test_square_perimeter_float(self):
@@ -42,13 +49,20 @@ class TestSquareFunctions(unittest.TestCase):
         Test the area function by float
         """
         # Test for side a = 6.9
-        self.assertAlmostEqual(perimeter(6.9), 4*6.9)
+        self.assertEqual(perimeter(6.9), 4*6.9)
     
     def test_square_perimeter_big(self):
         """
         Test the area function by float and int
         """
         # Test for side a = 520
-        self.assertAlmostEqual(perimeter(520), 4*520)
+        self.assertEqual(perimeter(520), 4*520)
         
+    def test_square_perimeter_negative(self):
+        """
+        Test the perimeter function by negeative integer.
+        """
+        with self.assertRaises(Exception):
+            # Test for side a = -6
+           perimeter(-6)
 
